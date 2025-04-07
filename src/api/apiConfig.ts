@@ -1,9 +1,8 @@
 import { AuthCredentials } from "../domain";
 import axios from "axios";
 
-export const BASE_URL = "http://localhost:3001/";
 export const api = axios.create({
-  baseURL: BASE_URL
+  baseURL: process.env.REACT_APP_API_URL
 });
 
 type InterceptorProps = {
@@ -11,6 +10,8 @@ type InterceptorProps = {
   saveCredentials: (ac: AuthCredentials) => Promise<void>;
   removeCredentials: () => Promise<void>;
 };
+
+console.log("API URL:", process.env.REACT_APP_API_URL);
 
 export function registerInterceptor({ removeCredentials }: InterceptorProps) {
   const interceptor = api.interceptors.response.use(
