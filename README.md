@@ -41,6 +41,45 @@ Taskly é uma aplicação de gerenciamento de tarefas com autenticação, sistem
 ### Clonando o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/taskly.git
-cd taskly
+git clone git@github.com:r2brito/taskly-web.git
+cd taskly-web
+```
+
+### Instalando dependências
+
+```bash
+# com npm
+npm install
+
+# ou com yarn
+yarn install
+```
+
+### Instalando dependências
+
+```bash
+# com npm
+npm run start
+
+# ou com yarn
+yarn start
+```
+
+### Estrutura de Pastas
+
+```bash
+src/
+├── api/                    # Configuração do Axios + interceptors
+├── components/             # Componentes reutilizáveis
+├── domain/                 # Lógica de domínio (auth, tarefas, etc)
+├── guards/                 # Responsável por proteger rotas, como verificação de autenticação.
+├── infra/                  # infraestrutura da aplicação: integração com libs como React Query, armazenamento, etc.
+├── layouts/                # Estrutura visual comum entre páginas (ex: headers, sidebars, containers).
+├── pages/                  # Páginas principais da aplicação, como login, cadastro e painel de tarefas.
+├── routes/                 # Arquivos de configuração e gerenciamento de rotas.
+├── sections/               # Seções especificas da aplicação.
+├── services/               # Serviços globais como contextos (ex: autenticação, armazenamento).
+├── theme/                  # Tema visual e estilos globais da aplicação usando styled-components.
+├── validations/            # Schemas Yup usados para validação de formulários.
+└── App.tsx                 # Root da aplicação
 ```
